@@ -8,48 +8,31 @@
  */
 int main(int argc, char **argv)
 {
-/*	stack_t *head; */
 	FILE *fp;
-	int closer, counter, i;
-	char str[10];
-/*	char *string; */
-
-	if (argc != 2)
-	{
-		printf("USAGE: monty file\n");
-		exit (EXIT_FAILURE);
-	}
-/*	head = NULL; */
-	fp = fopen(argv[1], "r");
-	if (fp == NULL)
-	{
-		printf("USAGE: monty file\n");
-		exit (EXIT_FAILURE);
-	}
-/*	line = NULL; */
+	int counter, ins = 0, i;
+	char str[40], *opc, *temp;
+	stack_t *head = NULL;
 	
-	while (fgets(str, 10, fp) != NULL)
+	check_argc(argc);
+	fp = fopen(argv[1], "r");
+	if (fp== NULL)
 	{
-/*		read_line = getline(&line, &page_size, fp); */
-		/* tokenize here */
-		i = 0;
-		for ( ; str[i] == ' ' && str[i]; i++)  
-		{
-			if (str[i] != ' ')
-			{
-				counter++;
-				/*	flag = 0; */
-			}
-			else
-			{
-				/* flag = 1; */
-			}
-		}
-/*		string = malloc(counter * sizeof(char)); */
-		printf("%s", str);
+		printf("Error: can't open file %s\n", argv[1]);
+		exit (EXIT_FAILURE);
 	}
-	closer = fclose(fp);
-	if (closer == -1)
+	while (fgets(str, 40, fp) != NULL)
+	{
+		opc = strtok(str, " ");
+		if (opc != NULL)
+		{
+			temp = strtok(NULL, " ");
+			if (temp)
+				ins = atoi(temp);
+		}	
+		printf("%s ", opc);
+		printf("%d\n", ins);
+	}
+	if (fclose(fp) != 0)
 	{
 		return (-1);
 	}
