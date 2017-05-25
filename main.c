@@ -9,8 +9,9 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
+	size_t file_size;
 	int counter, ins = 0, i;
-	char str[40], *opc, *temp;
+	char *opc, *temp, *line = NULL;
 	stack_t *head = NULL;
 	
 	check_argc(argc);
@@ -20,9 +21,10 @@ int main(int argc, char **argv)
 		printf("Error: can't open file %s\n", argv[1]);
 		exit (EXIT_FAILURE);
 	}
-	while (fgets(str, 40, fp) != NULL)
+	while (getline(&line, &file_size, fp) != -1)
 	{
-		opc = strtok(str, " ");
+/*		printf("%s\n", temp);
+*/		opc = strtok(line, " ");
 		if (opc != NULL)
 		{
 			temp = strtok(NULL, " ");
