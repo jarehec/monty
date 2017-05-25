@@ -1,19 +1,30 @@
 #include "monty.h"
 
-int _struct(char , int end_f)
+stack_t *_struct(char *str, int p_num)
 {
+	stack_t *head;
+	head = NULL;
+
 	instruction_t inst[] = {
-		{"push", _push},
-		{"pall", _pall},
+		{"pall", pall},
 		{NULL, NULL}
 	};
 	
 	int i;
 
 	i = 0;
-	while (i <= end_f)
+
+	
+	if (strcmp(str, "push") == 0)
 	{
-		if (strcmp(
+		printf("test\n");
+		push(&head, p_num);
+		
 	}
 
+	while (i < 3)
+	{
+		i++;
+	}
+	return (head);
 }

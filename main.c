@@ -21,22 +21,25 @@ int main(int argc, char **argv)
 		printf("Error: can't open file %s\n", argv[1]);
 		exit (EXIT_FAILURE);
 	}
+	i = 0;
 	while (getline(&line, &file_size, fp) != -1)
 	{
-/*		printf("%s\n", temp);
-*/		opc = strtok(line, " ");
+		opc = strtok(line, " ");
 		if (opc != NULL)
 		{
 			temp = strtok(NULL, " ");
 			if (temp)
 				ins = atoi(temp);
-		}	
-		printf("%s ", opc);
-		printf("%d\n", ins);
+		}
+		if (strcmp("push", opc) == 0)
+			push(&head, ins); 
+		i++;
 	}
 	if (fclose(fp) != 0)
 	{
+		free(line);
 		return (-1);
 	}
+	free(line);
 	return (1);
 }

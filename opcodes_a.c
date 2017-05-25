@@ -1,51 +1,80 @@
 #include "monty.h"
 
+
+
+stack_t *push(stack_t **head, int n)
+{
+	int temp = n;
+	stack_t *new_node = malloc(sizeof(stack_t *));
+
+	if (head == NULL || new_node == NULL)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	new_node->n = temp;
+	new_node->next = *head;
+	new_node->prev = NULL;
+	if (*head != NULL)
+	{
+		(*head)->prev = new_node;
+	}
+	*head = new_node;
+	return (new_node);
+}
+
+
+
+
 /**
  * push_m - push node onto stack
  * @head: head node
  * @n: integer data inside of node
  * Return: returns the newly created node that is added to end of stack
  */
+
+/*
 stack_t *push_m(stack_t **head, int n)
 {
-	int temp = n;
-	stack_t *new_node;
-	stack_t *head_node;
-	
-	head_node = *head;
+	stack_t *new_node = NULL;
+	stack_t *pointer = *head;
+
 	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	if (head == NULL || new_node == NULL)
 	{
+		printf("testagain\n");
 		return (NULL);
 	}
-	new_node->n = temp;
+
+	new_node->n = n;
 	new_node->next = NULL;
 	new_node->prev = NULL;
-	if (*head == NULL)
+
+	if (*head)
 	{
-		*head == new_node;
-		return (new_node);
+		while ((*head)->next)
+		{
+			(*head) = (*head)->next;
+		}
+		(*head)->next = new_node;
+		new_node->prev = (*head);
+		*head = pointer;
 	}
 	else
 	{
-		while (head_node->next != NULL)
-		{
-			head_node->prev = new_node;
-			head_node = head_node->next;
-		}
-		head_node->next = new_node;
-		new_node->next = NULL;
-		return (new_node);
+		*head = new_node;
 	}
-	return (NULL);
+	printf("test3\n");
+	return (new_node);
 
-}
+	} */
+
 /**
 * pall - Prints all elements on the stack
 * @h: pointer to head of the stack list
 * Return: number of nodes
 */
-void pall(const stack_t *h)
+void pall(stack_t *h)
 {
 	if (h)
 	{
@@ -55,6 +84,7 @@ void pall(const stack_t *h)
 			h = h->next;	
 		}
 	}
+	printf("pallis working\n");
 }
 
 /**
@@ -76,21 +106,23 @@ void pint(const stack_t *h)
  * pop - Removes th e top element of the stack
  * @h: pointer to head of the stack list
  */
+
+/*
 void pop(const stack_t **h)
 {
 	stack_t *top = *h;
 
 	if (*h == NULL)
 	{
-		puts("L1: can't pop an empty stack")
+		puts("L1: can't pop an empty stack");
 		exit (EXIT_FAILURE);
 	}
 	if (top->next)
 		top->next->prev = NULL;
-	*h = top->next
+	*h = top->next;
 	free(top);
 }
-
+*/
 /**
  * nop - Does nothing
  */

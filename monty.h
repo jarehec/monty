@@ -36,8 +36,11 @@ typedef struct instruction_s
 } instruction_t;
 
 void check_argc(int ac);
-void pall(const stack_t *h);
+void pall(stack_t *h);
 void pint(const stack_t *h);
 void pop(const stack_t **h);
 void nop(void);
+stack_t *_struct(char *str, int p_num);
+stack_t *push_m(stack_t **head, int n);
+stack_t *push(stack_t **head, int n);
 #endif
