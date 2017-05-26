@@ -34,6 +34,7 @@ void add(stack_t **h, unsigned int l_num)
 		printf("L%d: can't add, stack too short\n", l_num);
 		exit(EXIT_FAILURE);
 	}
+<<<<<<< HEAD
 	temp->next->n += temp->n + temp->next->n;
 	temp->next->prev = NULL;
 	*h = temp->next;
