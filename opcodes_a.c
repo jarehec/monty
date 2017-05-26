@@ -75,23 +75,20 @@ stack_t *push_m(stack_t **head, int n)
 void pall(stack_t **h, unsigned int line_n)
 {
 	unsigned int i;
+	stack_t *temp;
 	i = line_n;
 
-	if (h)
+	temp = *h;
+	if (*h)
 	{
-		while (h)
+		while (*h)
 		{
 			printf("%d\n", (*h)->n);
 			*h = (*h)->next;	
 			i++;
-			if ((*h)->next == NULL)
-			{				
-				printf("%d\n", (*h)->n);
-				return;
-			}
 		}
 	}
-	printf("pallis working\n");
+	*h = temp;
 }
 
 /**

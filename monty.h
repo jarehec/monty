@@ -35,6 +35,8 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/********************* functions *************** */
 void check_argc(int ac);
 void pall(stack_t **h, unsigned int line_n);
 void pint(stack_t **h, unsigned int l_num);
@@ -44,4 +46,7 @@ int _struct(char *str, stack_t **head, unsigned int l_num);
 stack_t *push_m(stack_t **head, int n);
 stack_t *push(stack_t **head, int n);
 int _strcmp(char *s1, char *s2);
+void swap(stack_t **h, unsigned int l_num);
+void add(stack_t **h, unsigned int l_num);
+void sub(stack_t **h, unsigned int l_num);
 #endif

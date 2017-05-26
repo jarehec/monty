@@ -6,6 +6,9 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
+		{"swap", swap},
+		{"add", add},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	
@@ -13,13 +16,20 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 	int i;
 	i = 0;
 
-	while (i < 3)
+	while (inst[i].opcode != NULL)
 	{
 		if (_strcmp(str, inst[i].opcode) == 0)
 		{
 			(inst[i].f)(head, l_num);
+			return (1);
 		}
 		i++;
 	}
-	return (-1);
+	
+/*	if (inst[i].opcode == NULL)
+	{
+		printf("L%d: unknown instruction <opcode>\n", l_num);
+		exit (EXIT_FAILURE);
+		} */
+	return (1);
 }
