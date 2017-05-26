@@ -1,7 +1,5 @@
 #include "monty.h"
 
-
-
 stack_t *push(stack_t **head, int n)
 {
 	int temp = n;
@@ -74,14 +72,23 @@ stack_t *push_m(stack_t **head, int n)
 * @h: pointer to head of the stack list
 * Return: number of nodes
 */
-void pall(stack_t *h)
+void pall(stack_t **h, unsigned int line_n)
 {
+	unsigned int i;
+	i = line_n;
+
 	if (h)
 	{
 		while (h)
 		{
-			printf("%d\n", h->n);
-			h = h->next;	
+			printf("%d\n", (*h)->n);
+			*h = (*h)->next;	
+			i++;
+			if ((*h)->next == NULL)
+			{				
+				printf("%d\n", (*h)->n);
+				return;
+			}
 		}
 	}
 	printf("pallis working\n");
@@ -91,15 +98,16 @@ void pall(stack_t *h)
  * pint - Prints the value at the top of the stack
  * @h: pointer to head of the stack list
  */
-void pint(const stack_t *h)
+void pint(stack_t **h, unsigned int l_num)
 {
 	if (h)
-		printf("%d\n", h->n);
+		printf("%d\n", (*h)->n);
 	else if (h == NULL)
 	{
 		puts("L1: can't pint, stack empty");
 		exit (EXIT_FAILURE);
 	}
+	l_num++;
 }
 
 /**
@@ -107,8 +115,8 @@ void pint(const stack_t *h)
  * @h: pointer to head of the stack list
  */
 
-/*
-void pop(const stack_t **h)
+
+void pop(stack_t **h, unsigned int l_num)
 {
 	stack_t *top = *h;
 
@@ -117,12 +125,14 @@ void pop(const stack_t **h)
 		puts("L1: can't pop an empty stack");
 		exit (EXIT_FAILURE);
 	}
+	printf("test 1\n");
 	if (top->next)
 		top->next->prev = NULL;
 	*h = top->next;
+	l_num++;
 	free(top);
 }
-*/
+
 /**
  * nop - Does nothing
  */
