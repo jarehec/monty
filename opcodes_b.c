@@ -6,7 +6,7 @@
  * @l_num: line number
  * Return: line number
  */
-int swap(stack_t **h, unsigned int l_num)
+void swap(stack_t **h, unsigned int l_num)
 {
 	int temp;
 
@@ -16,9 +16,8 @@ int swap(stack_t **h, unsigned int l_num)
 		exit(EXIT_FAILURE);
 	}
 	temp = (*h)->n;
-	(*h)->n = (*h)-next->n;
-	(*h)->next-> = temp;
-	return (l_num + 1);
+	(*h)->n = (*h)->next->n;
+	(*h)->next->n = temp;
 }
 
 /**
@@ -27,7 +26,7 @@ int swap(stack_t **h, unsigned int l_num)
  * @l_num: line count
  * Return: line count
  */
-int add(stack_t **h, unsigned int l_num)
+void add(stack_t **h, unsigned int l_num)
 {
 	stack_t *temp = *h;
 
@@ -36,9 +35,8 @@ int add(stack_t **h, unsigned int l_num)
 		printf("L%d: can't add, stack too short\n", l_num);
 		exit(EXIT_FAILURE);
 	}
-	temp->next->n = temp->n + temp->next->n;
+	temp->next->n += temp->n;
 	temp->next->prev = NULL;
 	*h = temp->next;
 	free(temp);
-	return (l_num + 1);
 }
