@@ -46,5 +46,6 @@ int main(int argc, char **argv)
 		return (-1);
 	}
 	free(line);
+	free_m(head);
 	return (1);
 }
