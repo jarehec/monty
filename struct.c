@@ -3,13 +3,11 @@
 int _struct(char *str, stack_t **head, unsigned int l_num)
 {
 	instruction_t inst[] = {
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"sub", sub},
-		{NULL, NULL}
+		{"pall", pall},{"pint", pint},
+		{"pop", pop},{"swap", swap},
+		{"add", add},{"sub", sub},
+		{"mul", mul},{"div", div_m},
+		{"mod", mod},{NULL, NULL}
 	};
 	
 	
