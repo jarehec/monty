@@ -22,12 +22,13 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 	i = 0;
 	while (inst[i].opcode != NULL)
 	{
-		if (_strcmp(str, inst[i].opcode) == 0)
+		if (strcmp(str, inst[i].opcode) == 0)
 		{
 			(inst[i].f)(head, l_num);
-			return (1);
+			return (EXIT_SUCCESS);
 		}
 		i++;
 	}
-	return (-1);
+	printf("L%d: unknown instruction %s\n", l_num, str);
+	exit (EXIT_FAILURE);;
 }
