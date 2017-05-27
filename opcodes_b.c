@@ -61,11 +61,11 @@ void sub(stack_t **h, unsigned int l_num)
 }
 
 /**
- * div - Divides the first two nodes on the stack, removes first node
+ * div_m - Divides the first two nodes on the stack, removes first node
  * @h: Pointer to the top of the stack
  * @l_num: line count
  */
-void div(stack_t **h, unsigned int l_num)
+void div_m(stack_t **h, unsigned int l_num)
 {
 	stack_t *temp = *h;
 

@@ -9,6 +9,6 @@ void check_argc(int ac)
 	if (ac != 2)
 	{
 		printf("USAGE: monty file\n");
-		exit (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 }

@@ -49,4 +49,7 @@ int _strcmp(char *s1, char *s2);
 void swap(stack_t **h, unsigned int l_num);
 void add(stack_t **h, unsigned int l_num);
 void sub(stack_t **h, unsigned int l_num);
+void mul(stack_t **h, unsigned int l_num);
+void div_m(stack_t **h, unsigned int l_num);
+void mod(stack_t **h, unsigned int l_num);
 #endif
