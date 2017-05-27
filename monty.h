@@ -56,5 +56,5 @@ void sub(stack_t **h, unsigned int l_num);
 void mul(stack_t **h, unsigned int l_num);
 void div_m(stack_t **h, unsigned int l_num);
 void mod(stack_t **h, unsigned int l_num);
-void free_m(stack_t *head);
+void free_m(stack_t **head);
 #endif /* monty */

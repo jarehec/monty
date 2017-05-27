@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 		else
 			_struct(opc, &head, l_num);
 	}
-	free(line); free_m(head);
+	free(line); /*free_m(head);*/
+	fclose(fp);
 	return (1);
 }

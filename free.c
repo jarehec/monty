@@ -5,15 +5,15 @@
  * @head: head node
  * Return: void
  */
-void free_m(stack_t *head)
+void free_m(stack_t **head)
 {
 
 	stack_t *temp;
 
 	while (head != NULL)
 	{
-		temp = head;
-		head = head->next;
+		temp = *head;
+		*head = (*head)->next;
 		free(temp);
 	}
 }
