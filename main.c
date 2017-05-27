@@ -11,8 +11,9 @@ int main(int argc, char **argv)
 	FILE *fp;
 	size_t file_size; int ins = 0, len;
 	unsigned int l_num;
-	char *opc, *temp, *line = NULL; stack_t *head = NULL; ssize_t read;
+	char *opc, *temp, *line = NULL; stack_t *head; ssize_t read;
 
+	head = NULL;
 	check_argc(argc);
 	fp = fopen(argv[1], "r");
 	l_num = 0;
@@ -43,7 +44,8 @@ int main(int argc, char **argv)
 		else
 			_struct(opc, &head, l_num);
 	}
-	free(line); /*free_m(head);*/
+	free(line);
+	free_m(&head);
 	fclose(fp);
 	return (1);
 }

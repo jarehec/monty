@@ -43,8 +43,8 @@ void pall(stack_t **h, unsigned int line_n)
 	stack_t *temp;
 
 	i = line_n;
-	n = 0;
 	temp = *h;
+	n = 0;
 	if (temp && n < 1)
 	{
 		n++;
@@ -55,7 +55,7 @@ void pall(stack_t **h, unsigned int line_n)
 			i++;
 		}
 	}
-	temp = *h;
+	free(temp);
 }
 
 

@@ -1,19 +1,20 @@
 #include "monty.h"
 
 /**
- * free_listint - free all nodes
+ * free_m - free all nodes
  * @head: head node
  * Return: void
  */
 void free_m(stack_t **head)
 {
-
 	stack_t *temp;
 
-	while (head != NULL)
+	temp = *head;
+
+	while (temp)
 	{
-		temp = *head;
-		*head = (*head)->next;
-		free(temp);
+		temp = (*head)->next;
+		free(*head);
+		*head = temp;
 	}
 }
