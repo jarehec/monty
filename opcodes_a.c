@@ -39,22 +39,23 @@ stack_t *push(stack_t **head, int n)
  */
 void pall(stack_t **h, unsigned int line_n)
 {
-	unsigned int i;
+	unsigned int i, n;
 	stack_t *temp;
 
 	i = line_n;
-
+	n = 0;
 	temp = *h;
-	if (*h)
+	if (temp && n < 1)
 	{
-		while (*h)
+		n++;
+		while (temp)
 		{
-			printf("%d\n", (*h)->n);
-			*h = (*h)->next;
+			printf("%d\n", (temp)->n);
+			temp = (temp)->next;
 			i++;
 		}
 	}
-	*h = temp;
+	temp = *h;
 }
 
 
@@ -92,7 +93,6 @@ void pop(stack_t **h, unsigned int l_num)
 		puts("L1: can't pop an empty stack");
 		exit(EXIT_FAILURE);
 	}
-	printf("test 1\n");
 	if (top->next)
 		top->next->prev = NULL;
 	*h = top->next;

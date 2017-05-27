@@ -9,11 +9,9 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	size_t file_size;
-	int ins = 0;
+	size_t file_size; int ins = 0, len;
 	unsigned int l_num;
-	char *opc, *temp, *line = NULL;
-	stack_t *head = NULL;
+	char *opc, *temp, *line = NULL; stack_t *head = NULL;
 
 	check_argc(argc);
 	fp = fopen(argv[1], "r");
@@ -25,7 +23,12 @@ int main(int argc, char **argv)
 	l_num = 0;
 	while (getline(&line, &file_size, fp) != -1)
 	{
-		opc = strtok(line, "\n ");
+		opc = strtok(line, " ");
+		len = strlen(opc);
+		if (opc[len - 1] == '\n')
+		{
+			opc[len - 1] = '\0';
+		}
 		if (opc != NULL)
 		{
 			temp = strtok(NULL, " ");
