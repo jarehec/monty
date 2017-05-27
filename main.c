@@ -9,9 +9,9 @@
 int main(int argc, char **argv)
 {
 	FILE *fp;
-	size_t file_size;
+	size_t file_size; int ins = 0, len;
 	unsigned int l_num;
-	char *opc, *ins, *line = NULL; stack_t *head;
+	char *opc, *temp, *line = NULL; stack_t *head; ssize_t read;
 
 	head = NULL;
 	check_argc(argc);
@@ -22,34 +22,27 @@ int main(int argc, char **argv)
 		printf("Error: can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line, &file_size, fp) != EOF)
+	while ((read = getline(&line, &file_size, fp)) != -1)
 	{
 		l_num++;
 		opc = strtok(line, " ");
-/*		len = strlen(opc);
+		len = strlen(opc);
 		if (opc[len - 1] == '\n')
 		{
 			opc[len - 1] = '\0';
 		}
-*/		if (opc != NULL)
+		if (opc != NULL)
 		{
-			ins = strtok(NULL, " ");
-			if (ins != NULL)
+			temp = strtok(NULL, " ");
+			if (temp)
 			{
-				if (isdigit(atoi(ins)))
-				{
-					if (strcmp("push", opc) == 0)
-						push(&head, atoi(ins));
-					else
-						_struct(opc, &head, l_num);
-				}
-				else
-				{
-					printf("L%d: usage: push integer\n", l_num);
-					exit(EXIT_FAILURE);
-				}
+				ins = atoi(temp);
 			}
 		}
+		if (strcmp("push", opc) == 0)
+			push(&head, ins);
+		else
+			_struct(opc, &head, l_num);
 	}
 	free(line);
 	free_m(&head);
