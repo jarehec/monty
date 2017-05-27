@@ -39,13 +39,13 @@ int main(int argc, char **argv)
 		}
 		if (strcmp("push", opc) == 0)
 			push(&head, ins);
-		_struct(opc, &head, l_num); l_num++;
+		else
+			_struct(opc, &head, l_num);
+		l_num++;
 	}
 	if (fclose(fp) != 0)
-	{
 		free(line);
 		return (-1);
-	}
 	free(line); free_m(head);
 	return (1);
 }
