@@ -11,7 +11,7 @@ void mod(stack_t **h, unsigned int l_num)
 
 	if (*h == NULL || (*h)->next == NULL)
 	{
-		printf("L%d: can't sub, stack too short\n", l_num);
+		printf("L%d: can't mod, stack too short\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	if (temp->n == 0)
