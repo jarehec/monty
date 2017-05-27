@@ -71,7 +71,7 @@ void pint(stack_t **h, unsigned int l_num)
 		printf("%d\n", (*h)->n);
 	else if (h == NULL)
 	{
-		puts("L1: can't pint, stack empty");
+		printf("L%d: can't pint, stack empty\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	l_num++;
@@ -90,7 +90,7 @@ void pop(stack_t **h, unsigned int l_num)
 
 	if (*h == NULL)
 	{
-		puts("L1: can't pop an empty stack");
+		printf("L%d: can't pop an empty stack\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	if (top->next)

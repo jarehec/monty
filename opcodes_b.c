@@ -71,7 +71,7 @@ void div_m(stack_t **h, unsigned int l_num)
 
 	if (*h == NULL || (*h)->next == NULL)
 	{
-		printf("L%d: can't sub, stack too short\n", l_num);
+		printf("L%d: can't div, stack too short\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	if (temp->n == 0)
@@ -96,7 +96,7 @@ void mul(stack_t **h, unsigned int l_num)
 
 	if (*h == NULL || (*h)->next == NULL)
 	{
-		printf("L%d: can't sub, stack too short\n", l_num);
+		printf("L%d: can't mul, stack too short\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	temp->next->n *= temp->n;
