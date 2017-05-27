@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	}
 	while ((read = getline(&line, &file_size, fp)) != -1)
 	{
+		l_num++;
 		opc = strtok(line, " ");
 		len = strlen(opc);
 		if (opc[len - 1] == '\n')
@@ -41,11 +42,7 @@ int main(int argc, char **argv)
 			push(&head, ins);
 		else
 			_struct(opc, &head, l_num);
-		l_num++;
 	}
-	if (fclose(fp) != 0)
-		free(line);
-		return (-1);
 	free(line); free_m(head);
 	return (1);
 }

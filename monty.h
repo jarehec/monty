@@ -4,6 +4,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,4 +57,4 @@ void mul(stack_t **h, unsigned int l_num);
 void div_m(stack_t **h, unsigned int l_num);
 void mod(stack_t **h, unsigned int l_num);
 void free_m(stack_t *head);
-#endif
+#endif /* monty */
