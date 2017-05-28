@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -59,4 +58,5 @@ void mod(stack_t **h, unsigned int l_num);
 void pchar(stack_t **h, unsigned int l_num);
 void pstr(stack_t **h, unsigned int l_num);
 void free_m(stack_t **head);
+void cleanup(char *s, stack_t **h, FILE *f);
 #endif /* monty */

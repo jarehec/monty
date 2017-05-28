@@ -12,3 +12,17 @@ void check_argc(int ac)
 		exit(EXIT_FAILURE);
 	}
 }
+
+/**
+ * cleanup - frees memory and closes file
+ * @ln: memory used by getline
+ * @h: head of a stack_t list
+ * @f: file that is open
+ * Return: void
+ */
+void cleanup(char *ln, stack_t **h, FILE *f)
+{
+	free(ln);
+	free_m(h);
+	fclose(f);
+}

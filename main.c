@@ -43,5 +43,6 @@ int main(int argc, char **argv)
 		}
 		l_num++;
 	}
-	free(line); free_m(&head); fclose(fp); return (0);
+	cleanup(line, &head, fp);
+	return (0);
 }
