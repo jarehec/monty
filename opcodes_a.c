@@ -15,8 +15,8 @@ stack_t *push(stack_t **head, int n)
 	new_node = malloc(sizeof(stack_t));
 	if (head == NULL || new_node == NULL)
 	{
-		free(new_node);
-		return (NULL);
+		printf("Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
 	new_node->n = n;
 	new_node->next = *head;
@@ -46,8 +46,6 @@ void pall(stack_t **h, unsigned int l_num)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
-	*h = *h;
-	l_num = l_num;
 }
 
 
