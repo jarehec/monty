@@ -39,7 +39,7 @@ int _isdigit(char *s)
 		return (-1);
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] < '0' && s[i] > '9')
+		if (s[i] < '0' || s[i] > '9')
 			return (-1);
 	}
 	return (0);
