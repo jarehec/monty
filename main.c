@@ -36,6 +36,10 @@ int main(int argc, char **argv)
 			}
 			else if (strcmp("push", opc) != 0 && ins == NULL)
 				_struct(opc, &head, l_num);
+			else if (strcmp("push", opc) != 0)
+			{
+				printf("L%d: unknown instruction %s\n", l_num, opc); exit(EXIT_FAILURE);
+			}
 			else
 			{
 				printf("L%d: usage: push integer\n", l_num); exit(EXIT_FAILURE);
