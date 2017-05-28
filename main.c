@@ -24,18 +24,20 @@ int main(int argc, char **argv)
 	}
 	while ((getline(&line, &file_size, fp)) != -1)
 	{
-		opc = strtok(line, " \n");
-/*		len = strlen(opc);
-		if (opc[len - 1] == '\n')
-		{
-			opc[len - 1] = '\0';
-		}
-*/		if (opc != NULL)
+		opc = strtok(line, "\n\t\r ");
+		if (opc != NULL)
 		{
 			ins = strtok(NULL, " ");
 			if (ins != NULL && isdigit(atoi(ins)) == 0 && strcmp("push", opc) == 0)
+			{
+				if (atoi(ins) < 0)
+				{
+					printf("L%d: usage: push integer\n", l_num);
+					exit(EXIT_FAILURE);
+				}
 				push(&head, atoi(ins));
-		 	else if (ins == NULL)
+			}
+			else if (ins == NULL)
 				_struct(opc, &head, l_num);
 			else
 			{
@@ -45,8 +47,5 @@ int main(int argc, char **argv)
 		}
 		l_num++;
 	}
-	free(line);
-	free_m(&head);
-	fclose(fp);
-	return (0);
+	free(line); free_m(&head); fclose(fp); return (0);
 }
