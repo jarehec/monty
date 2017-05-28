@@ -10,15 +10,15 @@
  */
 stack_t *push(stack_t **head, int n)
 {
-	int temp = n;
-	stack_t *new_node = malloc(sizeof(stack_t *));
+	stack_t *new_node = NULL;
 
+	new_node = malloc(sizeof(stack_t));
 	if (head == NULL || new_node == NULL)
 	{
 		free(new_node);
 		return (NULL);
 	}
-	new_node->n = temp;
+	new_node->n = n;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	if (*head != NULL)
@@ -35,27 +35,19 @@ stack_t *push(stack_t **head, int n)
  * pall - Prints all elements on the stack
  * @h: pointer to head of the stack list
  * @line_n: line number of .m file
- * Return: number of nodes
+ * Return: void
  */
-void pall(stack_t **h, unsigned int line_n)
+void pall(stack_t **h, unsigned int l_num)
 {
-	unsigned int i, n;
-	stack_t *temp;
+	stack_t *temp = *h;
 
-	i = line_n;
-	temp = *h;
-	n = 0;
-	if (temp && n < 1)
+	while (temp)
 	{
-		n++;
-		while (temp)
-		{
-			printf("%d\n", (temp)->n);
-			temp = (temp)->next;
-			i++;
-		}
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
-	free(temp);
+	*h = *h;
+	l_num = l_num;
 }
 
 
@@ -103,6 +95,8 @@ void pop(stack_t **h, unsigned int l_num)
  * nop - Does nothing
  * Return: void
  */
-void nop(void)
+void nop(stack_t **h, unsigned int l_num)
 {
+	l_num = l_num;
+	*h = *h;
 }

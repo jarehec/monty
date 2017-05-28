@@ -45,7 +45,7 @@ void check_argc(int ac);
 void pall(stack_t **h, unsigned int line_n);
 void pint(stack_t **h, unsigned int l_num);
 void pop(stack_t **h, unsigned int l_num);
-void nop(void);
+void nop(stack_t **h, unsigned int l_num);
 int _struct(char *str, stack_t **head, unsigned int l_num);
 stack_t *push_m(stack_t **head, int n);
 stack_t *push(stack_t **head, int n);

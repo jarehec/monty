@@ -29,5 +29,5 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 		i++;
 	}
 	printf("L%d: unknown instruction %s\n", l_num, str);
-	exit (EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 }
