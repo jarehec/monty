@@ -67,13 +67,12 @@ void pall(stack_t **h, unsigned int line_n)
  */
 void pint(stack_t **h, unsigned int l_num)
 {
-	if (h)
-		printf("%d\n", (*h)->n);
-	else if (h == NULL)
+	if ((*h) == NULL || h == NULL)
 	{
 		printf("L%d: can't pint, stack empty\n", l_num);
 		exit(EXIT_FAILURE);
 	}
+	printf("%d\n", (*h)->n);
 	l_num++;
 }
 

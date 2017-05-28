@@ -17,9 +17,8 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 		{"mod", mod}, {NULL, NULL}
 	};
 
-	int i;
+	int i = 0;
 
-	i = 0;
 	while (inst[i].opcode != NULL)
 	{
 		if (strcmp(str, inst[i].opcode) == 0)
@@ -30,5 +29,5 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 		i++;
 	}
 	printf("L%d: unknown instruction %s\n", l_num, str);
-	exit (EXIT_FAILURE);;
+	exit (EXIT_FAILURE);
 }
