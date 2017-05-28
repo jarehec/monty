@@ -25,3 +25,25 @@ void mod(stack_t **h, unsigned int l_num)
 	free(temp);
 }
 
+/**
+ * pchar - Prints char at the top of the stack
+ * @h: Pointer to the top of the stack
+ * @l_num: line count
+ */
+void pchar(stack_t **h, unsigned int l_num)
+{
+	stack_t *temp = *h;
+
+	if (*h == NULL)
+	{
+		printf("L%d: can't pchar, stack empty\n", l_num);
+		exit(EXIT_FAILURE);
+	}
+	if (temp->n < 0 || temp->n > 128)
+	{
+		printf("L%d: can't phar, value out of range\n", l_num);
+		exit(EXIT_FAILURE);
+	}
+	putchar(temp->n);
+	putchar('\n');
+}

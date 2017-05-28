@@ -14,7 +14,8 @@ int _struct(char *str, stack_t **head, unsigned int l_num)
 		{"pop", pop}, {"swap", swap},
 		{"add", add}, {"sub", sub},
 		{"mul", mul}, {"div", div_m},
-		{"mod", mod}, {NULL, NULL}
+		{"mod", mod}, {"nop", nop},
+		{"pchar", pchar}, {NULL, NULL}
 	};
 
 	int i = 0;
