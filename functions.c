@@ -39,6 +39,8 @@ int _isdigit(char *s)
 		return (-1);
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if (s[0] == '-')
+			continue;
 		if (s[i] < '0' || s[i] > '9')
 			return (-1);
 	}
