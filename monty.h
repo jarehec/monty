@@ -57,5 +57,6 @@ void mul(stack_t **h, unsigned int l_num);
 void div_m(stack_t **h, unsigned int l_num);
 void mod(stack_t **h, unsigned int l_num);
 void pchar(stack_t **h, unsigned int l_num);
+void pstr(stack_t **h, unsigned int l_num);
 void free_m(stack_t **head);
 #endif /* monty */

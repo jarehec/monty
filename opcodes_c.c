@@ -39,11 +39,33 @@ void pchar(stack_t **h, unsigned int l_num)
 		printf("L%d: can't pchar, stack empty\n", l_num);
 		exit(EXIT_FAILURE);
 	}
-	if (temp->n < 0 || temp->n > 128)
+	if (temp->n < 0 && temp->n > 128)
 	{
 		printf("L%d: can't phar, value out of range\n", l_num);
 		exit(EXIT_FAILURE);
 	}
 	putchar(temp->n);
+	putchar('\n');
+}
+
+/**
+ * pstr - Prints string starting at the top of the stack
+ * @h: Pointer to the top of the stack
+ * @l_num: line count
+ */
+void pstr(stack_t **h, unsigned int l_num)
+{
+	stack_t *temp = *h;
+
+	while (temp != NULL && temp->n != 0)
+	{
+		if (temp->n < 0 && temp->n > 128)
+		{
+			printf("L%d: can't phar, value out of range\n", l_num);
+			exit(EXIT_FAILURE);
+		}
+		putchar(temp->n);
+		temp = temp->next;
+	}
 	putchar('\n');
 }
