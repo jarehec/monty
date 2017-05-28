@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	while ((getline(&line, &file_size, fp)) != -1)
 	{
 		opc = strtok(line, "\n\t\r ");
-		if (opc != NULL && strlen(opc) == 4)
+		if (opc != NULL)
 		{
 			ins = strtok(NULL, " ");
 			if (ins != NULL && isdigit(atoi(ins)) == 0 && strcmp("push", opc) == 0)
@@ -40,10 +40,6 @@ int main(int argc, char **argv)
 			{
 				printf("L%d: usage: push integer\n", l_num); exit(EXIT_FAILURE);
 			}
-		}
-		else
-		{
-			printf("L%d: unknown instruction %s\n", l_num, opc); exit(EXIT_FAILURE);
 		}
 		l_num++;
 	}
