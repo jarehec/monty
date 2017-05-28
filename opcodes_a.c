@@ -46,6 +46,7 @@ void pall(stack_t **h, unsigned int l_num)
 		printf("%d\n", temp->n);
 		temp = temp->next;
 	}
+	l_num = l_num;
 }
 
 
