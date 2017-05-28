@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 		opc = strtok(line, "\n\t\r ");
 		if (opc != NULL)
 		{
-			ins = strtok(NULL, " ");
+			ins = strtok(NULL, "\n\t\r ");
 			if (ins != NULL && isdigit(atoi(ins)) == 0 && strcmp("push", opc) == 0)
 			{
 				if (atoi(ins) < 0)
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 				}
 				push(&head, atoi(ins));
 			}
-			else if (ins == NULL)
+			else if (strcmp("push", opc) != 0 && ins == NULL)
 				_struct(opc, &head, l_num);
 			else
 			{
