@@ -8,11 +8,8 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *fp;
-	size_t file_size;
-	unsigned int l_num = 1;
-	char *opc = NULL, *ins = NULL, *line = NULL;
-	stack_t *head;
+	FILE *fp; size_t file_size; unsigned int l_num = 1;
+	char *opc = NULL, *ins = NULL, *line = NULL; stack_t *head;
 
 	head = NULL;
 	check_argc(argc);
@@ -25,7 +22,7 @@ int main(int argc, char **argv)
 	while ((getline(&line, &file_size, fp)) != -1)
 	{
 		opc = strtok(line, "\n\t\r ");
-		if (opc != NULL)
+		if (opc != NULL && strlen(opc) == 4)
 		{
 			ins = strtok(NULL, " ");
 			if (ins != NULL && isdigit(atoi(ins)) == 0 && strcmp("push", opc) == 0)
@@ -41,9 +38,12 @@ int main(int argc, char **argv)
 				_struct(opc, &head, l_num);
 			else
 			{
-				printf("L%d: usage: push integer\n", l_num);
-				exit(EXIT_FAILURE);
+				printf("L%d: usage: push integer\n", l_num); exit(EXIT_FAILURE);
 			}
+		}
+		else
+		{
+			printf("L%d: unknown instruction %s\n", l_num, opc); exit(EXIT_FAILURE);
 		}
 		l_num++;
 	}
