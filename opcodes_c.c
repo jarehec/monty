@@ -59,7 +59,7 @@ void pstr(stack_t **h, unsigned int l_num)
 
 	while (temp != NULL && temp->n != 0)
 	{
-		if (temp->n < 0 && temp->n > 128)
+		if (temp->n < 0 || temp->n > 128)
 		{
 			printf("L%d: can't phar, value out of range\n", l_num);
 			exit(EXIT_FAILURE);
