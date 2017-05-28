@@ -26,3 +26,21 @@ void cleanup(char *ln, stack_t **h, FILE *f)
 	free_m(h);
 	fclose(f);
 }
+/**
+ * _isdigit - checks if string is a number
+ * @s: string
+ * Return: 0 on sucess, else -1
+ */
+int _isdigit(char *s)
+{
+	int i = 0;
+
+	if (s == NULL)
+		return (-1);
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < '0' && s[i] > '9')
+			return (-1);
+	}
+	return (0);
+}

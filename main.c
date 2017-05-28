@@ -25,20 +25,14 @@ int main(int argc, char **argv)
 		if (opc != NULL)
 		{
 			ins = strtok(NULL, "\n\t\r ");
-			if (ins != NULL && isdigit(atoi(ins)) == 0 && strcmp("push", opc) == 0)
-			{
-				if (atoi(ins) < 0)
-				{
-					printf("L%d: usage: push integer\n", l_num);
-					exit(EXIT_FAILURE);
-				}
+			if (_isdigit(ins) == 0 && strcmp("push", opc) == 0)
 				push(&head, atoi(ins));
-			}
-			else if (strcmp("push", opc) != 0 && ins == NULL)
+			else if (strcmp("push", opc) != 0)
 				_struct(opc, &head, l_num);
 			else
 			{
-				printf("L%d: usage: push integer\n", l_num); exit(EXIT_FAILURE);
+				printf("L%d: usage: push integer\n", l_num);
+				exit(EXIT_FAILURE);
 			}
 		}
 		l_num++;

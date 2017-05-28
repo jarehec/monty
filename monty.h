@@ -49,6 +49,7 @@ int _struct(char *str, stack_t **head, unsigned int l_num);
 stack_t *push_m(stack_t **head, int n);
 stack_t *push(stack_t **head, int n);
 int _strcmp(char *s1, char *s2);
+int _isdigit(char *s);
 void swap(stack_t **h, unsigned int l_num);
 void add(stack_t **h, unsigned int l_num);
 void sub(stack_t **h, unsigned int l_num);
