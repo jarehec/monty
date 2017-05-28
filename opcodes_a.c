@@ -34,7 +34,7 @@ stack_t *push(stack_t **head, int n)
 /**
  * pall - Prints all elements on the stack
  * @h: pointer to head of the stack list
- * @line_n: line number of .m file
+ * @l_num: line number of .m file
  * Return: void
  */
 void pall(stack_t **h, unsigned int l_num)
@@ -92,6 +92,8 @@ void pop(stack_t **h, unsigned int l_num)
 
 /**
  * nop - Does nothing
+ * @h: pointer to top of stack
+ * @l_num: line number
  * Return: void
  */
 void nop(stack_t **h, unsigned int l_num)
