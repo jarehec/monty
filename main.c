@@ -35,6 +35,7 @@ int main(int argc, char **argv)
 					printf("L%d: usage: push integer\n", l_num);
 					exit(EXIT_FAILURE);
 				}
+				push(&head, atoi(ins));
 			}
 			else if (ins == NULL)
 				_struct(opc, &head, l_num);
