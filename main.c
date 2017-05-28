@@ -22,12 +22,12 @@ int main(int argc, char **argv)
 	while ((getline(&line, &file_size, fp)) != -1)
 	{
 		opc = strtok(line, "\n\t\r ");
-		if (opc != NULL && (opc[0] != '#'))
+		if (opc != NULL)
 		{
 			ins = strtok(NULL, "\n\t\r ");
 			if (_isdigit(ins) == 0 && strcmp("push", opc) == 0)
 				push(&head, atoi(ins));
-			else if (opc != NULL)
+			else if (strcmp("push", opc) != 0)
 				_struct(opc, &head, l_num);
 			else
 			{
