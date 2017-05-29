@@ -9,6 +9,10 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 ## Compililation
 Files are compiled using `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
 
+## Usage
+[test.m](https://gist.github.com/jarehec/86e2bba051b576176fb752280c8ba862)
+`./monty test.m`
+
 ## Data Structures
 ```/**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -44,18 +48,18 @@ typedef struct instruction_s
 
 
 ## Description of monty code
-*`push <int>` - pushes an integer onto the stack
-*`pall` - prints all data inside stack
-*`pint` - prints data at top of stack
-*`pop` - deletes a node on stack
-*`pchar` - prints char at top of stack
-*`pstr` - prints string at top of stack
-*`add` - add two integers at top of stack
-*`sub` - subtracts two integers at top of stack
-*`div` - divides two integers at top of stack
-*`mul` - multiplies two integers at top of stack
-*`mod` - returns remainder of divisions between two integers at top of stack
+* `push <int>` - pushes an integer onto the stack
+* `pall` - prints all data inside stack
+* `pint` - prints data at top of stack
+* `pop` - deletes a node on stack
+* `pchar` - prints char at top of stack
+* `pstr` - prints string at top of stack
+* `add` - add two integers at top of stack
+* `sub` - subtracts two integers at top of stack
+* `div` - divides two integers at top of stack
+* `mul` - multiplies two integers at top of stack
+* `mod` - returns remainder of divisions between two integers at top of stack
 
 ## Authors
-*Jared Heck
-*Kevin Pak
+* Jared Heck
+* Kevin Pak
