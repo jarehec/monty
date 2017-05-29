@@ -39,7 +39,7 @@ void pchar(stack_t **h, unsigned int l_num)
 		printf("L%d: can't pchar, stack empty\n", l_num);
 		exit(EXIT_FAILURE);
 	}
-	if (temp->n < 0 || temp->n > 128)
+	if (temp->n < 0 || temp->n > 127)
 	{
 		printf("L%d: can't pchar, value out of range\n", l_num);
 		exit(EXIT_FAILURE);
@@ -57,7 +57,7 @@ void pstr(stack_t **h, unsigned int l_num)
 {
 	stack_t *temp = *h;
 
-	while (temp != NULL && !(temp->n <= 0 || temp->n > 128))
+	while (temp != NULL && !(temp->n <= 0 || temp->n > 127))
 	{
 		putchar(temp->n);
 		temp = temp->next;
