@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	fp = fopen(argv[1], "r");
 	if (fp == NULL)
 	{
-		printf("Error: can't open file %s\n", argv[1]);
+		printf("Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while ((getline(&line, &file_size, fp)) != -1)
