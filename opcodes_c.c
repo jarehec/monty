@@ -57,15 +57,11 @@ void pstr(stack_t **h, unsigned int l_num)
 {
 	stack_t *temp = *h;
 
-	while (temp != NULL && temp->n != 0)
+	while (temp != NULL && !(temp->n < 0 || temp->n > 128))
 	{
-		if (temp->n < 0 || temp->n > 128)
-		{
-			printf("L%d: can't phar, value out of range\n", l_num);
-			exit(EXIT_FAILURE);
-		}
 		putchar(temp->n);
 		temp = temp->next;
 	}
+	l_num = l_num;
 	putchar('\n');
 }
