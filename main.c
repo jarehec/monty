@@ -4,7 +4,7 @@
  * main - main function in which primary functionalities are organized
  * @argc: number of command line inputs implemented
  * @argv: double pointer to string inputted into command line
- * Return: to be announced
+ * Return: 0 on success
  */
 int main(int argc, char **argv)
 {
@@ -25,11 +25,11 @@ int main(int argc, char **argv)
 		if (opc != NULL)
 		{
 			ins = strtok(NULL, "\n\t\r ");
-			if (_isdigit(ins) == 0 && strcmp("push", opc) == 0)
+			if (_isdigit(ins) == 0 && strcmp("push", opc) == 0 && opc[0] != '#')
 				push(&head, atoi(ins));
-			else if (strcmp("push", opc) != 0)
+			else if (strcmp("push", opc) != 0 && opc[0] != '#')
 				_struct(opc, &head, l_num);
-			else
+			else if (opc[0] != '#')
 			{
 				printf("L%d: usage: push integer\n", l_num);
 				exit(EXIT_FAILURE);
