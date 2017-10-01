@@ -10,8 +10,8 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 Files are compiled using `gcc -Wall -Werror -Wextra -pedantic *.c -o monty`
 
 ## Usage
-[test.m](https://gist.github.com/jarehec/86e2bba051b576176fb752280c8ba862)
-`./monty test.m`
+* [test.m](https://gist.github.com/jarehec/86e2bba051b576176fb752280c8ba862)
+* `./monty test.m`
 
 ## Data Structures
 ```/**
